@@ -3,50 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AMO Seamless Eavestrough - Professional eavestrough installation, cleaning, and repair services in Pembroke, Petawawa, and Ottawa Valley. Family-owned with 100% customer recommendation. Free quotes: 613-312-9523">
-    <meta name="keywords" content="eavestrough, seamless gutters, gutter cleaning, gutter repair, Pembroke, Petawawa, Ottawa Valley, eavestrough installation">
+    <meta name="description" content="AMO Seamless Eavestrough - Protect your home from heavy rain. Professional eavestrough installation, cleaning, and repair in Ottawa Valley. 613-312-9523">
+    <meta name="keywords" content="eavestrough, seamless gutters, gutter cleaning, rain protection, Pembroke, Petawawa, Ottawa Valley">
     <meta name="robots" content="index, follow">
-    <meta name="author" content="AMO Seamless Eavestrough">
-    
-    <meta property="og:title" content="AMO Seamless Eavestrough | Protect Your Home from Water Damage">
-    <meta property="og:description" content="Professional eavestrough installation, cleaning, and repair. Family-owned, serving Ottawa Valley with 100% customer recommendation.">
+
+    <meta property="og:title" content="AMO Seamless Eavestrough | Protect Your Home from Heavy Rain">
+    <meta property="og:description" content="Don't let rain damage your home. Professional eavestrough services in Ottawa Valley.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://amo.ottawav.com">
-    <meta property="og:locale" content="en_CA">
-    <meta property="og:site_name" content="AMO Seamless Eavestrough">
-    
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="AMO Seamless Eavestrough | Ottawa Valley Gutter Experts">
-    <meta name="twitter:description" content="Professional eavestrough installation, cleaning, and repair. 613-312-9523">
-    
-    <title>AMO Seamless Eavestrough | Pembroke & Ottawa Valley | Installation, Cleaning & Repair</title>
-    
+    <meta property="og:url" content="https://amo.ottawav.com/rain/">
+
+    <title>AMO Seamless Eavestrough | Rain Protection Experts | Ottawa Valley</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'storm-dark': '#0c1929',
+                        'storm-dark': '#0a0f1a',
                         'storm-blue': '#1a365d',
                         'rain-blue': '#4299e1',
                         'rain-light': '#63b3ed',
-                        'silver': '#a0aec0',
-                        'silver-light': '#cbd5e0',
-                        'gold': '#f59e0b',
-                        'trust-green': '#10b981',
-                    },
-                    fontFamily: {
-                        'inter': ['Inter', 'sans-serif'],
-                    },
-                    animation: {
-                        'float': 'float 6s ease-in-out infinite',
-                        'shimmer': 'shimmer 2s ease-in-out infinite',
-                        'flash': 'flash 8s ease-in-out infinite',
+                        'lightning': '#fef08a',
+                        'thunder': '#fbbf24',
                     }
                 }
             }
@@ -54,8 +37,14 @@
     </script>
     <style>
         * { font-family: 'Inter', sans-serif; }
-        
-        /* HEAVY RAIN SYSTEM */
+
+        body {
+            background: linear-gradient(180deg, #0a0f1a 0%, #1a2744 50%, #0f172a 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* MEGA RAIN SYSTEM */
         .rain-container {
             position: fixed;
             top: 0;
@@ -66,163 +55,125 @@
             z-index: 1000;
             overflow: hidden;
         }
-        
+
         .rain-drop {
             position: absolute;
-            background: linear-gradient(180deg, transparent 0%, rgba(66, 153, 225, 0.3) 50%, rgba(99, 179, 237, 0.6) 100%);
+            background: linear-gradient(180deg, transparent 0%, rgba(66, 153, 225, 0.4) 30%, rgba(99, 179, 237, 0.7) 100%);
             border-radius: 0 0 2px 2px;
             animation: rain-fall linear infinite;
+            filter: blur(0.3px);
         }
-        
+
+        .rain-drop.heavy {
+            background: linear-gradient(180deg, transparent 0%, rgba(99, 179, 237, 0.5) 30%, rgba(147, 197, 253, 0.8) 100%);
+            filter: blur(0.5px);
+        }
+
         @keyframes rain-fall {
-            0% { transform: translateY(-100px) rotate(15deg); opacity: 0; }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
-            100% { transform: translateY(100vh) rotate(15deg); opacity: 0; }
+            0% { transform: translateY(-100px) rotate(12deg); opacity: 0; }
+            5% { opacity: 1; }
+            95% { opacity: 0.8; }
+            100% { transform: translateY(100vh) rotate(12deg); opacity: 0; }
         }
-        
-        /* RAIN DROPLETS ON GLASS */
-        .glass-droplet {
-            position: absolute;
-            background: radial-gradient(ellipse at 30% 30%, rgba(255,255,255,0.4) 0%, rgba(66, 153, 225, 0.2) 50%, transparent 70%);
-            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-            animation: droplet-grow 4s ease-in-out infinite;
-        }
-        
-        @keyframes droplet-grow {
-            0%, 100% { transform: scale(1); opacity: 0.3; }
-            50% { transform: scale(1.1); opacity: 0.5; }
-        }
-        
-        /* SPLASH EFFECTS */
-        .splash {
-            position: absolute;
-            bottom: 0;
-            width: 8px;
-            height: 4px;
-            animation: splash-up 1s ease-out infinite;
-        }
-        
-        .splash::before, .splash::after {
-            content: '';
-            position: absolute;
-            background: rgba(99, 179, 237, 0.5);
-            border-radius: 50%;
-        }
-        
-        .splash::before {
-            width: 3px;
-            height: 3px;
-            left: -4px;
-            animation: splash-particle 1s ease-out infinite;
-        }
-        
-        .splash::after {
-            width: 2px;
-            height: 2px;
-            right: -4px;
-            animation: splash-particle 1s ease-out infinite 0.1s;
-        }
-        
-        @keyframes splash-up {
-            0% { transform: translateY(0) scaleX(1); opacity: 1; }
-            50% { transform: translateY(-15px) scaleX(0.5); opacity: 0.7; }
-            100% { transform: translateY(-20px) scaleX(0); opacity: 0; }
-        }
-        
-        @keyframes splash-particle {
-            0% { transform: translateY(0) translateX(0); opacity: 1; }
-            100% { transform: translateY(-10px) translateX(var(--x, 5px)); opacity: 0; }
-        }
-        
-        /* RIPPLE EFFECTS */
-        .ripple-container {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 80px;
-            overflow: hidden;
-            pointer-events: none;
-        }
-        
-        .ripple {
-            position: absolute;
-            border: 2px solid rgba(99, 179, 237, 0.3);
-            border-radius: 50%;
-            animation: ripple-expand 3s linear infinite;
-        }
-        
-        @keyframes ripple-expand {
-            0% { transform: scale(0); opacity: 1; }
-            100% { transform: scale(4); opacity: 0; }
-        }
-        
-        /* MIST/FOG OVERLAY */
-        .mist-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 150px;
-            background: linear-gradient(to top, rgba(12, 25, 41, 0.6), transparent);
-            pointer-events: none;
-        }
-        
-        /* STORM CLOUDS */
-        .storm-cloud {
-            position: absolute;
-            background: radial-gradient(ellipse at center, rgba(26, 54, 93, 0.8) 0%, transparent 70%);
-            border-radius: 50%;
-            animation: cloud-drift 20s ease-in-out infinite;
-        }
-        
-        @keyframes cloud-drift {
-            0%, 100% { transform: translateX(0) scale(1); }
-            50% { transform: translateX(30px) scale(1.1); }
-        }
-        
+
         /* LIGHTNING FLASH */
-        .lightning-flash {
+        .lightning {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(255, 255, 255, 0.1);
+            background: radial-gradient(ellipse at 50% 0%, rgba(254, 240, 138, 0.3) 0%, transparent 70%);
             pointer-events: none;
-            opacity: 0;
-            animation: lightning 8s ease-in-out infinite;
             z-index: 999;
+            opacity: 0;
+            animation: lightning-flash 8s ease-in-out infinite;
         }
-        
-        @keyframes lightning {
+
+        .lightning::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            opacity: 0;
+            animation: lightning-bolt 8s ease-in-out infinite;
+        }
+
+        @keyframes lightning-flash {
             0%, 89%, 91%, 93%, 100% { opacity: 0; }
-            90% { opacity: 0.3; }
-            92% { opacity: 0.5; }
+            90% { opacity: 0.4; }
+            92% { opacity: 0.6; }
         }
-        
-        /* WATER SHIMMER */
-        @keyframes shimmer {
-            0%, 100% { background-position: -200% center; }
-            50% { background-position: 200% center; }
+
+        @keyframes lightning-bolt {
+            0%, 89.5%, 90.5%, 91.5%, 100% { opacity: 0; }
+            90% { opacity: 0.15; }
+            91% { opacity: 0; }
+            92% { opacity: 0.2; }
         }
-        
-        .water-shimmer {
-            background: linear-gradient(90deg, #f59e0b 0%, #fcd34d 25%, #f59e0b 50%, #fcd34d 75%, #f59e0b 100%);
-            background-size: 200% auto;
-            animation: shimmer 2s linear infinite;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+
+        /* RIPPLES */
+        .ripple {
+            position: absolute;
+            border: 1px solid rgba(99, 179, 237, 0.4);
+            border-radius: 50%;
+            animation: ripple-expand 1.5s ease-out infinite;
         }
-        
-        .btn-shimmer {
+
+        @keyframes ripple-expand {
+            0% { transform: scale(0); opacity: 0.8; }
+            100% { transform: scale(3); opacity: 0; }
+        }
+
+        /* MIST/FOG */
+        .mist {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            background: linear-gradient(180deg, transparent 0%, rgba(99, 179, 237, 0.1) 50%, rgba(66, 153, 225, 0.15) 100%);
+            pointer-events: none;
+            z-index: 998;
+            animation: mist-drift 10s ease-in-out infinite;
+        }
+
+        @keyframes mist-drift {
+            0%, 100% { transform: translateX(-5%); opacity: 0.7; }
+            50% { transform: translateX(5%); opacity: 0.9; }
+        }
+
+        /* CLOUDS */
+        .clouds {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 200px;
+            background: 
+                radial-gradient(ellipse at 20% 50%, rgba(30, 41, 59, 0.9) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 30%, rgba(30, 41, 59, 0.8) 0%, transparent 45%),
+                radial-gradient(ellipse at 80% 60%, rgba(30, 41, 59, 0.85) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 997;
+            animation: clouds-drift 60s linear infinite;
+        }
+
+        @keyframes clouds-drift {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* THUNDER BUTTON */
+        .thunder-btn {
             position: relative;
             overflow: hidden;
         }
-        
-        .btn-shimmer::after {
+
+        .thunder-btn::before {
             content: '';
             position: absolute;
             top: 0;
@@ -230,1013 +181,226 @@
             width: 100%;
             height: 100%;
             background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            animation: btn-shimmer 3s ease-in-out infinite;
+            animation: thunder-shine 3s ease-in-out infinite;
         }
-        
-        @keyframes btn-shimmer {
-            0% { left: -100%; }
-            50%, 100% { left: 100%; }
+
+        @keyframes thunder-shine {
+            0%, 100% { left: -100%; }
+            50% { left: 100%; }
         }
-        
-        /* WATER FLOW IN GUTTERS */
-        .water-flow {
-            position: absolute;
-            height: 4px;
-            background: linear-gradient(90deg, transparent, rgba(99, 179, 237, 0.8), transparent);
-            animation: flow-water 2s linear infinite;
+
+        /* GLASS MORPHISM */
+        .glass {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(99, 179, 237, 0.2);
         }
-        
-        @keyframes flow-water {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(200%); }
+
+        /* WATER DROP ICON */
+        .water-drop {
+            display: inline-block;
+            animation: drop-bounce 2s ease-in-out infinite;
         }
-        
-        /* RIPPLE HOVER */
-        .ripple-hover {
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .ripple-hover::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            background: rgba(99, 179, 237, 0.3);
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s;
-        }
-        
-        .ripple-hover:hover::before {
-            width: 300px;
-            height: 300px;
-        }
-        
-        /* PUDDLE EFFECT */
-        .puddle {
-            position: relative;
-        }
-        
-        .puddle::after {
-            content: '';
-            position: absolute;
-            bottom: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80%;
-            height: 10px;
-            background: radial-gradient(ellipse, rgba(66, 153, 225, 0.2) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-        
-        .hero-bg {
-            background: linear-gradient(180deg, rgba(12,25,41,0.98) 0%, rgba(26,54,93,0.95) 50%, rgba(26,54,93,0.9) 100%);
-        }
-        
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 25px 50px -12px rgba(12, 25, 41, 0.4);
-        }
-        
-        .cta-pulse {
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.4); }
-            50% { box-shadow: 0 0 0 15px rgba(245, 158, 11, 0); }
-        }
-        
-        .sticky-header {
-            transition: all 0.3s ease;
-        }
-        
-        .sticky-header.scrolled {
-            background: rgba(12, 25, 41, 0.98);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-        }
-        
-        .wave-divider {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            overflow: hidden;
-            line-height: 0;
-        }
-        
-        .wave-divider svg {
-            position: relative;
-            display: block;
-            width: calc(100% + 1.3px);
-            height: 60px;
+
+        @keyframes drop-bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
         }
     </style>
-    
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "@id": "https://amo.ottawav.com/#business",
-        "name": "AMO Seamless Eavestrough",
-        "alternateName": "AMO Seamless Eavestroughs",
-        "description": "Family-owned eavestrough installation, cleaning, and repair services serving Pembroke, Petawawa, and the Ottawa Valley. 100% customer recommendation.",
-        "url": "https://amo.ottawav.com",
-        "telephone": "+1-613-312-9523",
-        "email": "amoseamless@gmail.com",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Pembroke",
-            "addressRegion": "ON",
-            "addressCountry": "CA"
-        },
-        "areaServed": [
-            {"@type": "City", "name": "Pembroke"},
-            {"@type": "City", "name": "Petawawa"},
-            {"@type": "City", "name": "Deep River"},
-            {"@type": "City", "name": "Chalk River"},
-            {"@type": "City", "name": "Renfrew"},
-            {"@type": "AdministrativeArea", "name": "Renfrew County"},
-            {"@type": "AdministrativeArea", "name": "Ottawa Valley"}
-        ],
-        "priceRange": "$$",
-        "openingHours": "Mo-Sa 07:00-18:00",
-        "paymentAccepted": "Cash, Check, Credit Card",
-        "currenciesAccepted": "CAD",
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "5.0",
-            "reviewCount": "8",
-            "bestRating": "5"
-        },
-        "sameAs": ["https://www.facebook.com/amoseamless"],
-        "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "Eavestrough Services",
-            "itemListElement": [
-                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Seamless Eavestrough Installation"}},
-                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Gutter Cleaning"}},
-                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Eavestrough Repair"}}
-            ]
-        }
-    }
-    </script>
 </head>
-<body class="bg-storm-dark text-white antialiased">
+<body class="text-white">
+    <!-- RAIN EFFECTS -->
+    <div class="rain-container" id="rainContainer"></div>
+    <div class="lightning"></div>
+    <div class="mist"></div>
+    <div class="clouds"></div>
 
-    <!-- LIGHTNING FLASH -->
-    <div class="lightning-flash"></div>
+    <!-- RIPPLE CONTAINER -->
+    <div class="fixed bottom-0 left-0 w-full h-32 pointer-events-none z-50" id="rippleContainer"></div>
 
-    <!-- HEAVY RAIN CONTAINER -->
-    <div class="rain-container" aria-hidden="true">
-        <!-- 30+ Rain Drops with varying speeds and sizes -->
-        <div class="rain-drop" style="left: 2%; width: 2px; height: 20px; animation-duration: 0.8s; animation-delay: 0s;"></div>
-        <div class="rain-drop" style="left: 5%; width: 3px; height: 25px; animation-duration: 0.6s; animation-delay: 0.2s;"></div>
-        <div class="rain-drop" style="left: 8%; width: 2px; height: 18px; animation-duration: 0.9s; animation-delay: 0.5s;"></div>
-        <div class="rain-drop" style="left: 12%; width: 2px; height: 22px; animation-duration: 0.7s; animation-delay: 0.1s;"></div>
-        <div class="rain-drop" style="left: 15%; width: 3px; height: 28px; animation-duration: 0.5s; animation-delay: 0.3s;"></div>
-        <div class="rain-drop" style="left: 18%; width: 2px; height: 20px; animation-duration: 0.85s; animation-delay: 0.4s;"></div>
-        <div class="rain-drop" style="left: 22%; width: 2px; height: 24px; animation-duration: 0.65s; animation-delay: 0.6s;"></div>
-        <div class="rain-drop" style="left: 25%; width: 3px; height: 30px; animation-duration: 0.55s; animation-delay: 0.15s;"></div>
-        <div class="rain-drop" style="left: 28%; width: 2px; height: 19px; animation-duration: 0.75s; animation-delay: 0.35s;"></div>
-        <div class="rain-drop" style="left: 32%; width: 2px; height: 21px; animation-duration: 0.9s; animation-delay: 0.45s;"></div>
-        <div class="rain-drop" style="left: 35%; width: 3px; height: 26px; animation-duration: 0.6s; animation-delay: 0.25s;"></div>
-        <div class="rain-drop" style="left: 38%; width: 2px; height: 23px; animation-duration: 0.8s; animation-delay: 0.55s;"></div>
-        <div class="rain-drop" style="left: 42%; width: 2px; height: 17px; animation-duration: 0.95s; animation-delay: 0.7s;"></div>
-        <div class="rain-drop" style="left: 45%; width: 3px; height: 29px; animation-duration: 0.5s; animation-delay: 0.05s;"></div>
-        <div class="rain-drop" style="left: 48%; width: 2px; height: 20px; animation-duration: 0.85s; animation-delay: 0.4s;"></div>
-        <div class="rain-drop" style="left: 52%; width: 2px; height: 25px; animation-duration: 0.7s; animation-delay: 0.2s;"></div>
-        <div class="rain-drop" style="left: 55%; width: 3px; height: 22px; animation-duration: 0.6s; animation-delay: 0.5s;"></div>
-        <div class="rain-drop" style="left: 58%; width: 2px; height: 18px; animation-duration: 0.9s; animation-delay: 0.3s;"></div>
-        <div class="rain-drop" style="left: 62%; width: 2px; height: 24px; animation-duration: 0.75s; animation-delay: 0.65s;"></div>
-        <div class="rain-drop" style="left: 65%; width: 3px; height: 27px; animation-duration: 0.55s; animation-delay: 0.1s;"></div>
-        <div class="rain-drop" style="left: 68%; width: 2px; height: 21px; animation-duration: 0.8s; animation-delay: 0.45s;"></div>
-        <div class="rain-drop" style="left: 72%; width: 2px; height: 19px; animation-duration: 0.85s; animation-delay: 0.6s;"></div>
-        <div class="rain-drop" style="left: 75%; width: 3px; height: 28px; animation-duration: 0.5s; animation-delay: 0.25s;"></div>
-        <div class="rain-drop" style="left: 78%; width: 2px; height: 23px; animation-duration: 0.7s; animation-delay: 0.35s;"></div>
-        <div class="rain-drop" style="left: 82%; width: 2px; height: 20px; animation-duration: 0.9s; animation-delay: 0.55s;"></div>
-        <div class="rain-drop" style="left: 85%; width: 3px; height: 26px; animation-duration: 0.6s; animation-delay: 0.15s;"></div>
-        <div class="rain-drop" style="left: 88%; width: 2px; height: 22px; animation-duration: 0.8s; animation-delay: 0.4s;"></div>
-        <div class="rain-drop" style="left: 92%; width: 2px; height: 18px; animation-duration: 0.95s; animation-delay: 0.7s;"></div>
-        <div class="rain-drop" style="left: 95%; width: 3px; height: 25px; animation-duration: 0.55s; animation-delay: 0.2s;"></div>
-        <div class="rain-drop" style="left: 98%; width: 2px; height: 21px; animation-duration: 0.75s; animation-delay: 0.5s;"></div>
-    </div>
-
-    <!-- Seasonal Top Bar -->
-    <div class="bg-gradient-to-r from-storm-blue via-rain-blue/80 to-storm-blue text-white py-3 px-4 text-center relative overflow-hidden">
-        <div class="absolute inset-0 bg-storm-dark/30"></div>
-        <div class="relative flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-6">
-            <div class="flex items-center gap-2">
-                <span class="text-xl">🌧️</span>
-                <span class="font-semibold text-sm sm:text-base">Rain Season is Here - Protect Your Home!</span>
-            </div>
-            <a href="tel:613-312-9523" class="bg-gold text-storm-dark px-4 py-1.5 rounded-full font-bold text-sm hover:bg-yellow-300 transition-all duration-300 flex items-center gap-2 btn-shimmer">
-                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
-                </svg>
-                Get Ready: 613-312-9523
-            </a>
-        </div>
-    </div>
-
-    <!-- Sticky Header -->
-    <header class="sticky-header sticky top-0 z-50 bg-storm-dark/95 backdrop-blur-sm text-white border-b border-silver/10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16 sm:h-20">
-                <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-gradient-to-br from-rain-blue to-rain-light flex items-center justify-center shadow-lg relative overflow-hidden">
-                        <div class="water-flow" style="width: 100%; top: 8px;"></div>
-                        <svg class="w-6 h-6 sm:w-7 sm:h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
-                        </svg>
-                    </div>
-                    <div>
-                        <h1 class="text-lg sm:text-xl font-bold tracking-tight">AMO Seamless</h1>
-                        <p class="text-xs text-rain-light hidden sm:block">Eavestrough Experts</p>
-                    </div>
-                </div>
-                
-                <nav class="hidden lg:flex items-center gap-8">
-                    <a href="#services" class="text-sm font-medium hover:text-rain-light transition-colors">Services</a>
-                    <a href="#why-seamless" class="text-sm font-medium hover:text-rain-light transition-colors">Why Seamless?</a>
-                    <a href="#areas" class="text-sm font-medium hover:text-rain-light transition-colors">Service Areas</a>
-                    <a href="#about" class="text-sm font-medium hover:text-rain-light transition-colors">About Us</a>
-                    <a href="#contact" class="text-sm font-medium hover:text-rain-light transition-colors">Contact</a>
-                </nav>
-                
-                <div class="flex items-center gap-3">
-                    <a href="tel:613-312-9523" class="hidden sm:flex items-center gap-2 text-rain-light hover:text-white transition-colors">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M2 3a1a1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
-                        </svg>
+    <!-- HEADER -->
+    <header class="relative z-10">
+        <nav class="glass fixed w-full top-0 z-50">
+            <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+                <a href="/" class="flex items-center gap-2">
+                    <span class="text-3xl">🌧️</span>
+                    <span class="text-xl font-bold text-rain-light">AMO Seamless</span>
+                </a>
+                <div class="flex items-center gap-6">
+                    <a href="tel:613-312-9523" class="flex items-center gap-2 bg-rain-blue/20 px-4 py-2 rounded-full hover:bg-rain-blue/30 transition">
+                        <span>📞</span>
                         <span class="font-semibold">613-312-9523</span>
                     </a>
-                    <a href="tel:613-312-9523" class="bg-gold hover:bg-yellow-400 text-storm-dark px-4 sm:px-6 py-2 sm:py-2.5 rounded-full font-bold text-sm transition-all duration-300 shadow-lg btn-shimmer cta-pulse">
-                        Free Quote
-                    </a>
-                    <button id="mobile-menu-btn" class="lg:hidden p-2 hover:bg-white/10 rounded-lg">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                        </svg>
-                    </button>
                 </div>
             </div>
-        </div>
-        
-        <div id="mobile-menu" class="hidden lg:hidden bg-storm-dark/95 backdrop-blur-sm border-t border-silver/10">
-            <nav class="max-w-7xl mx-auto px-4 py-4 space-y-3">
-                <a href="#services" class="block py-2 text-sm font-medium hover:text-rain-light transition-colors">Services</a>
-                <a href="#why-seamless" class="block py-2 text-sm font-medium hover:text-rain-light transition-colors">Why Seamless?</a>
-                <a href="#areas" class="block py-2 text-sm font-medium hover:text-rain-light transition-colors">Service Areas</a>
-                <a href="#about" class="block py-2 text-sm font-medium hover:text-rain-light transition-colors">About Us</a>
-                <a href="#contact" class="block py-2 text-sm font-medium hover:text-rain-light transition-colors">Contact</a>
-                <a href="tel:613-312-9523" class="flex items-center gap-2 py-2 text-rain-light">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
-                    </svg>
-                    613-312-9523
-                </a>
-            </nav>
-        </div>
+        </nav>
     </header>
 
-    <!-- Hero Section with Storm Clouds -->
-    <section class="hero-bg relative min-h-[90vh] flex items-center overflow-hidden">
-        <!-- Storm Clouds -->
-        <div class="storm-cloud" style="width: 400px; height: 150px; top: 5%; left: -5%; animation-delay: 0s;"></div>
-        <div class="storm-cloud" style="width: 350px; height: 120px; top: 10%; right: 0; animation-delay: 3s;"></div>
-        <div class="storm-cloud" style="width: 500px; height: 180px; top: 0; left: 30%; animation-delay: 6s;"></div>
-        
-        <!-- Glass Droplets Overlay -->
-        <div class="absolute inset-0 pointer-events-none">
-            <div class="glass-droplet" style="left: 10%; top: 20%; width: 8px; height: 10px; animation-delay: 0s;"></div>
-            <div class="glass-droplet" style="left: 25%; top: 35%; width: 6px; height: 8px; animation-delay: 1s;"></div>
-            <div class="glass-droplet" style="left: 60%; top: 15%; width: 10px; height: 12px; animation-delay: 2s;"></div>
-            <div class="glass-droplet" style="left: 80%; top: 40%; width: 7px; height: 9px; animation-delay: 0.5s;"></div>
-            <div class="glass-droplet" style="left: 45%; top: 60%; width: 9px; height: 11px; animation-delay: 1.5s;"></div>
-        </div>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div class="text-white">
-                    <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
-                        <div class="flex -space-x-1">
-                            <div class="w-6 h-6 rounded-full bg-yellow-400 flex items-center justify-center text-xs">⭐</div>
-                        </div>
-                        <span class="text-sm font-medium">100% Recommended • 8 Reviews</span>
-                    </div>
-                    
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-                        Let the Rain Flow,<br>
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-rain-light to-silver-light">Not the Problems</span>
-                    </h1>
-                    
-                    <p class="text-xl text-silver-light mb-8 max-w-xl">
-                        Your Home's First Line of Defense Against Rain. Family-owned eavestrough specialists serving Ottawa Valley with premium seamless installations.
-                    </p>
-                    
-                    <div class="grid grid-cols-3 gap-4 mb-8">
-                        <div class="text-center p-4 bg-white/10 backdrop-blur-sm rounded-xl ripple-hover">
-                            <div class="text-2xl mb-1">💧</div>
-                            <p class="text-sm font-semibold">No Leaks</p>
-                        </div>
-                        <div class="text-center p-4 bg-white/10 backdrop-blur-sm rounded-xl ripple-hover">
-                            <div class="text-2xl mb-1">🛡️</div>
-                            <p class="text-sm font-semibold">No Rust</p>
-                        </div>
-                        <div class="text-center p-4 bg-white/10 backdrop-blur-sm rounded-xl ripple-hover">
-                            <div class="text-2xl mb-1">♾️</div>
-                            <p class="text-sm font-semibold">Lifetime Value</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="tel:613-312-9523" class="bg-gold hover:bg-yellow-400 text-storm-dark px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-2xl btn-shimmer flex items-center justify-center gap-3 cta-pulse">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
-                            </svg>
-                            Get Free Quote
-                        </a>
-                        <a href="#services" class="border-2 border-silver/30 hover:border-rain-light text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 flex items-center justify-center gap-2">
-                            View Services
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="hidden lg:block relative">
-                    <div class="absolute inset-0 bg-gradient-to-br from-rain-blue/20 to-rain-light/20 rounded-3xl transform rotate-3"></div>
-                    <div class="relative bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-silver/20">
-                        <div class="aspect-square bg-gradient-to-br from-storm-dark to-storm-blue rounded-2xl flex items-center justify-center relative overflow-hidden">
-                            <!-- Water flowing in gutter animation -->
-                            <div class="absolute top-1/4 left-0 w-full h-2">
-                                <div class="water-flow" style="animation-duration: 1.5s;"></div>
-                            </div>
-                            <div class="absolute bottom-1/4 left-0 w-full h-2">
-                                <div class="water-flow" style="animation-duration: 2s; animation-delay: 0.5s;"></div>
-                            </div>
-                            <!-- House SVG -->
-                            <svg class="w-48 h-48 text-white/80" viewBox="0 0 100 100" fill="currentColor">
-                                <path d="M50 10 L10 45 L20 45 L20 85 L80 85 L80 45 L90 45 Z" fill="rgba(255,255,255,0.15)" stroke="currentColor" stroke-width="2"/>
-                                <rect x="35" y="55" width="30" height="30" fill="rgba(66,153,225,0.3)" stroke="currentColor" stroke-width="2"/>
-                                <path d="M15 45 Q 50 35 85 45" fill="none" stroke="#4299e1" stroke-width="4" stroke-linecap="round"/>
-                                <circle cx="50" cy="10" r="8" fill="#f59e0b"/>
-                                <path d="M0 55 L10 45 L10 50 L0 60 Z" fill="rgba(66,153,225,0.5)"/>
-                                <path d="M100 55 L90 45 L90 50 L100 60 Z" fill="rgba(66,153,225,0.5)"/>
-                                <circle cx="25" cy="50" r="3" fill="#63b3ed" class="animate-pulse"/>
-                                <circle cx="75" cy="50" r="3" fill="#63b3ed" class="animate-pulse" style="animation-delay: 0.5s"/>
-                                <circle cx="50" cy="38" r="3" fill="#63b3ed" class="animate-pulse" style="animation-delay: 1s"/>
-                            </svg>
-                        </div>
-                        <div class="mt-6 text-center">
-                            <p class="text-white font-semibold text-lg">Seamless Protection</p>
-                            <p class="text-rain-light text-sm">Rain flows freely, problems don't</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Ripple Container at bottom -->
-        <div class="ripple-container">
-            <div class="ripple" style="left: 10%; width: 30px; height: 30px; animation-delay: 0s;"></div>
-            <div class="ripple" style="left: 30%; width: 25px; height: 25px; animation-delay: 0.8s;"></div>
-            <div class="ripple" style="left: 50%; width: 35px; height: 35px; animation-delay: 1.6s;"></div>
-            <div class="ripple" style="left: 70%; width: 28px; height: 28px; animation-delay: 2.4s;"></div>
-            <div class="ripple" style="left: 90%; width: 32px; height: 32px; animation-delay: 0.4s;"></div>
-        </div>
-        
-        <!-- Mist Overlay -->
-        <div class="mist-overlay"></div>
-        
-        <!-- Wave Divider -->
-        <div class="wave-divider">
-            <svg viewBox="0 0 1200 120" preserveAspectRatio="none" fill="#0c1929">
-                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.11,140.83,94.17,208.18,70.28,267.39,49.21,321.39,56.44Z"></path>
-            </svg>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="py-20 px-4 sm:px-6 lg:px-8 bg-storm-dark relative">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <span class="inline-block bg-rain-blue/20 text-rain-light px-4 py-1.5 rounded-full text-sm font-semibold mb-4">Our Services</span>
-                <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Complete Eavestrough Solutions</h2>
-                <p class="text-silver-light max-w-2xl mx-auto">From installation to maintenance, we handle everything your gutters need to protect your home year-round.</p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="service-card bg-storm-blue/50 backdrop-blur-sm rounded-2xl p-6 border border-silver/10 transition-all duration-300 hover:border-rain-blue/50 ripple-hover">
-                    <div class="w-14 h-14 bg-gradient-to-br from-rain-blue to-rain-light rounded-xl flex items-center justify-center mb-5 shadow-lg relative overflow-hidden">
-                        <div class="water-flow" style="width: 100%; top: 5px; animation-duration: 1.5s;"></div>
-                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Eavestrough Installation</h3>
-                    <p class="text-silver-light mb-4">Custom seamless aluminum eavestroughs made on-site to perfectly fit your home.</p>
-                    <ul class="text-sm text-silver space-y-2">
-                        <li class="flex items-center gap-2">
-                            <svg class="w-4 h-4 text-trust-green" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                            Custom-fit onsite
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <svg class="w-4 h-4 text-trust-green" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                            Multiple colours
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="service-card bg-storm-blue/50 backdrop-blur-sm rounded-2xl p-6 border border-silver/10 transition-all duration-300 hover:border-rain-light/50 ripple-hover">
-                    <div class="w-14 h-14 bg-gradient-to-br from-rain-light to-silver-light rounded-xl flex items-center justify-center mb-5 shadow-lg">
-                        <svg class="w-7 h-7 text-storm-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Gutter Cleaning</h3>
-                    <p class="text-silver-light mb-4">Professional cleaning to remove leaves, debris, and blockages.</p>
-                    <ul class="text-sm text-silver space-y-2">
-                        <li class="flex items-center gap-2">
-                            <svg class="w-4 h-4 text-trust-green" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                            Spring & fall service
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <svg class="w-4 h-4 text-trust-green" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                            Full debris removal
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="service-card bg-storm-blue/50 backdrop-blur-sm rounded-2xl p-6 border border-silver/10 transition-all duration-300 hover:border-trust-green/50 ripple-hover">
-                    <div class="w-14 h-14 bg-gradient-to-br from-trust-green to-emerald-500 rounded-xl flex items-center justify-center mb-5 shadow-lg">
-                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Eavestrough Repair</h3>
-                    <p class="text-silver-light mb-4">Fix leaks, sagging, and damage quickly at a fraction of replacement cost.</p>
-                    <ul class="text-sm text-silver space-y-2">
-                        <li class="flex items-center gap-2">
-                            <svg class="w-4 h-4 text-trust-green" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                            Leak sealing
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <svg class="w-4 h-4 text-trust-green" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                            Re-pitching
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="service-card bg-gradient-to-br from-storm-blue/50 to-gold/10 backdrop-blur-sm rounded-2xl p-6 border border-gold/30 transition-all duration-300 hover:border-gold/60 ripple-hover relative overflow-hidden">
-                    <div class="absolute top-4 right-4">
-                        <span class="bg-gold text-storm-dark text-xs font-bold px-2 py-1 rounded-full">POPULAR</span>
-                    </div>
-                    <div class="w-14 h-14 bg-gradient-to-br from-gold to-amber-400 rounded-xl flex items-center justify-center mb-5 shadow-lg">
-                        <svg class="w-7 h-7 text-storm-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Gutter Protection</h3>
-                    <p class="text-silver-light mb-4">Premium leaf guards. Never clean your gutters again.</p>
-                    <ul class="text-sm text-silver space-y-2">
-                        <li class="flex items-center gap-2">
-                            <svg class="w-4 h-4 text-trust-green" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                            Low maintenance
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <svg class="w-4 h-4 text-trust-green" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                            Long-term savings
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Bottom mist -->
-        <div class="mist-overlay" style="height: 100px;"></div>
-    </section>
-
-    <!-- Why Seamless Section -->
-    <section id="why-seamless" class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-storm-blue to-storm-dark relative overflow-hidden">
-        <div class="max-w-7xl mx-auto relative">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <span class="inline-block bg-rain-blue/20 text-rain-light px-4 py-1.5 rounded-full text-sm font-semibold mb-4">Why Go Seamless?</span>
-                    <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6">The Seamless Advantage</h2>
-                    <p class="text-silver-light mb-8 text-lg">Traditional sectional gutters have seams every 10 feet – each one a potential leak point. Our seamless eavestroughs are custom-made on-site as one continuous piece.</p>
-                    
-                    <div class="space-y-6">
-                        <div class="flex gap-4">
-                            <div class="w-12 h-12 bg-trust-green/20 rounded-xl flex items-center justify-center flex-shrink-0">
-                                <svg class="w-6 h-6 text-trust-green" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-white mb-1">No Leaks, No Problems</h4>
-                                <p class="text-silver-light">Zero seams means zero leak points. Water flows smoothly.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex gap-4">
-                            <div class="w-12 h-12 bg-rain-blue/20 rounded-xl flex items-center justify-center flex-shrink-0">
-                                <svg class="w-6 h-6 text-rain-light" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-white mb-1">Custom Fit Every Time</h4>
-                                <p class="text-silver-light">Made on-site to match your home's exact measurements.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex gap-4">
-                            <div class="w-12 h-12 bg-gold/20 rounded-xl flex items-center justify-center flex-shrink-0">
-                                <svg class="w-6 h-6 text-gold" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-white mb-1">Less Maintenance</h4>
-                                <p class="text-silver-light">No debris trapped in seams means easier cleaning.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="relative">
-                    <div class="bg-storm-dark/50 backdrop-blur-sm rounded-3xl shadow-2xl p-8 border border-silver/10">
-                        <div class="grid grid-cols-2 gap-6">
-                            <div class="text-center">
-                                <div class="bg-red-900/30 border-2 border-red-500/50 rounded-xl p-6 mb-4">
-                                    <div class="flex justify-center gap-1 mb-4">
-                                        <div class="w-8 h-4 bg-silver/50 rounded-sm"></div>
-                                        <div class="text-red-400 font-bold text-xs flex items-center">✕</div>
-                                        <div class="w-8 h-4 bg-silver/50 rounded-sm"></div>
-                                        <div class="text-red-400 font-bold text-xs flex items-center">✕</div>
-                                        <div class="w-8 h-4 bg-silver/50 rounded-sm"></div>
-                                    </div>
-                                    <div class="text-red-400 font-bold text-sm">8+ Leak Points</div>
-                                </div>
-                                <h4 class="font-bold text-silver-light">Sectional Gutters</h4>
-                                <p class="text-sm text-silver mt-2">Seams every 10 feet</p>
-                            </div>
-                            
-                            <div class="text-center">
-                                <div class="bg-trust-green/20 border-2 border-trust-green/50 rounded-xl p-6 mb-4">
-                                    <div class="flex justify-center mb-4">
-                                        <div class="w-28 h-4 bg-gradient-to-r from-rain-blue to-rain-light rounded-full relative overflow-hidden">
-                                            <div class="water-flow" style="animation-duration: 1s;"></div>
-                                        </div>
-                                    </div>
-                                    <div class="text-trust-green font-bold text-sm">Zero Leak Points</div>
-                                </div>
-                                <h4 class="font-bold text-white">Seamless Gutters</h4>
-                                <p class="text-sm text-silver-light mt-2">One continuous piece</p>
-                            </div>
-                        </div>
-                        
-                        <div class="mt-8 p-4 bg-rain-blue/10 rounded-xl border border-rain-blue/20">
-                            <p class="text-center text-rain-light font-semibold">💧 AMO Seamless uses only premium heavy-gauge aluminum</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Service Areas -->
-    <section id="areas" class="py-20 px-4 sm:px-6 lg:px-8 bg-storm-dark text-white relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10">
-            <div class="absolute top-20 left-20 w-64 h-64 border border-rain-light rounded-full"></div>
-            <div class="absolute bottom-20 right-20 w-96 h-96 border border-rain-blue rounded-full"></div>
-        </div>
-        
-        <div class="max-w-7xl mx-auto relative">
-            <div class="text-center mb-12">
-                <span class="inline-block bg-rain-blue/20 text-rain-light px-4 py-1.5 rounded-full text-sm font-semibold mb-4">Service Areas</span>
-                <h2 class="text-3xl sm:text-4xl font-bold mb-4">Proudly Serving Ottawa Valley</h2>
-                <p class="text-silver-light max-w-2xl mx-auto">From Pembroke to Deep River, we protect homes across the entire Ottawa Valley region.</p>
-            </div>
-            
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 mb-12">
-                <div class="bg-storm-blue/50 backdrop-blur-sm rounded-xl p-4 text-center hover:bg-rain-blue/20 transition-colors border border-silver/10 ripple-hover">
-                    <div class="text-2xl mb-2">📍</div>
-                    <p class="font-semibold">Pembroke</p>
-                </div>
-                <div class="bg-storm-blue/50 backdrop-blur-sm rounded-xl p-4 text-center hover:bg-rain-blue/20 transition-colors border border-silver/10 ripple-hover">
-                    <div class="text-2xl mb-2">📍</div>
-                    <p class="font-semibold">Petawawa</p>
-                </div>
-                <div class="bg-storm-blue/50 backdrop-blur-sm rounded-xl p-4 text-center hover:bg-rain-blue/20 transition-colors border border-silver/10 ripple-hover">
-                    <div class="text-2xl mb-2">📍</div>
-                    <p class="font-semibold">Deep River</p>
-                </div>
-                <div class="bg-storm-blue/50 backdrop-blur-sm rounded-xl p-4 text-center hover:bg-rain-blue/20 transition-colors border border-silver/10 ripple-hover">
-                    <div class="text-2xl mb-2">📍</div>
-                    <p class="font-semibold">Chalk River</p>
-                </div>
-                <div class="bg-storm-blue/50 backdrop-blur-sm rounded-xl p-4 text-center hover:bg-rain-blue/20 transition-colors border border-silver/10 ripple-hover">
-                    <div class="text-2xl mb-2">📍</div>
-                    <p class="font-semibold">Renfrew</p>
-                </div>
-                <div class="bg-storm-blue/50 backdrop-blur-sm rounded-xl p-4 text-center hover:bg-rain-blue/20 transition-colors border border-silver/10 ripple-hover">
-                    <div class="text-2xl mb-2">📍</div>
-                    <p class="font-semibold">Cobden</p>
-                </div>
-            </div>
-            
-            <div class="text-center">
-                <p class="text-silver-light mb-4">And all surrounding areas in Renfrew County</p>
-                <a href="tel:613-312-9523" class="inline-flex items-center gap-2 bg-gold hover:bg-yellow-400 text-storm-dark px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 btn-shimmer">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
-                    </svg>
-                    Check If We Serve Your Area: 613-312-9523
+    <!-- HERO -->
+    <section class="relative min-h-screen flex items-center justify-center pt-20">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <div class="water-drop text-8xl mb-6">💧</div>
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-6">
+                <span class="text-white">Protect Your Home from</span>
+                <br>
+                <span class="bg-gradient-to-r from-rain-blue via-rain-light to-blue-300 bg-clip-text text-transparent">Heavy Rain</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                Professional eavestrough installation, cleaning & repair. 
+                Keep your home dry through the heaviest storms.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="tel:613-312-9523" class="thunder-btn bg-gradient-to-r from-rain-blue to-blue-500 px-8 py-4 rounded-xl text-lg font-bold hover:scale-105 transition-transform shadow-lg shadow-rain-blue/30">
+                    ⚡ Get Free Quote
+                </a>
+                <a href="#services" class="glass px-8 py-4 rounded-xl text-lg font-semibold hover:bg-white/10 transition">
+                    Our Services
                 </a>
             </div>
-        </div>
-    </section>
 
-    <!-- Why Choose AMO -->
-    <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-storm-blue to-storm-dark">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <span class="inline-block bg-gold/20 text-gold px-4 py-1.5 rounded-full text-sm font-semibold mb-4">Why Choose Us</span>
-                <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">The AMO Difference</h2>
-                <p class="text-silver-light max-w-2xl mx-auto">Family values, professional results. Here's why Ottawa Valley homeowners trust AMO Seamless.</p>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="text-center p-8 bg-storm-dark/30 rounded-2xl border border-silver/10 ripple-hover">
-                    <div class="w-20 h-20 bg-gradient-to-br from-rain-blue to-rain-light rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl">
-                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Family Owned & Operated</h3>
-                    <p class="text-silver-light">We're your neighbours, not a franchise. Every job gets our personal attention.</p>
+            <!-- RAIN STATS -->
+            <div class="mt-16 grid grid-cols-3 gap-4 max-w-lg mx-auto">
+                <div class="glass rounded-xl p-4">
+                    <div class="text-3xl font-bold text-rain-light">100%</div>
+                    <div class="text-sm text-gray-400">Recommend Us</div>
                 </div>
-                
-                <div class="text-center p-8 bg-storm-dark/30 rounded-2xl border border-silver/10 ripple-hover">
-                    <div class="w-20 h-20 bg-gradient-to-br from-trust-green to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl">
-                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Quality Workmanship</h3>
-                    <p class="text-silver-light">Premium materials, expert installation. We take pride in every detail.</p>
+                <div class="glass rounded-xl p-4">
+                    <div class="text-3xl font-bold text-rain-light">24/7</div>
+                    <div class="text-sm text-gray-400">Emergency</div>
                 </div>
-                
-                <div class="text-center p-8 bg-storm-dark/30 rounded-2xl border border-silver/10 ripple-hover">
-                    <div class="w-20 h-20 bg-gradient-to-br from-gold to-amber-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl">
-                        <svg class="w-10 h-10 text-storm-dark" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Fully Insured</h3>
-                    <p class="text-silver-light">Complete liability coverage and WSIB compliance. You're protected.</p>
-                </div>
-            </div>
-            
-            <div class="mt-16 bg-gradient-to-r from-storm-blue via-rain-blue/50 to-storm-blue rounded-2xl p-8 border border-rain-blue/20">
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white">
-                    <div>
-                        <div class="text-4xl font-bold mb-2">100%</div>
-                        <p class="text-rain-light text-sm">Recommendation Rate</p>
-                    </div>
-                    <div>
-                        <div class="text-4xl font-bold mb-2">8+</div>
-                        <p class="text-rain-light text-sm">5-Star Reviews</p>
-                    </div>
-                    <div>
-                        <div class="text-4xl font-bold mb-2">24hr</div>
-                        <p class="text-rain-light text-sm">Response Time</p>
-                    </div>
-                    <div>
-                        <div class="text-4xl font-bold mb-2">Free</div>
-                        <p class="text-rain-light text-sm">No-Obligation Quotes</p>
-                    </div>
+                <div class="glass rounded-xl p-4">
+                    <div class="text-3xl font-bold text-rain-light">15+</div>
+                    <div class="text-sm text-gray-400">Years Experience</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-storm-dark">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <span class="inline-block bg-trust-green/20 text-trust-green px-4 py-1.5 rounded-full text-sm font-semibold mb-4">Testimonials</span>
-                <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">What Our Customers Say</h2>
-                <p class="text-silver-light max-w-2xl mx-auto">Real feedback from Ottawa Valley homeowners who trusted AMO Seamless.</p>
+    <!-- SERVICES -->
+    <section id="services" class="relative z-10 py-20">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12">
+                <span class="text-rain-light">🌧️</span> Rain Protection Services
+            </h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="glass rounded-2xl p-6 hover:scale-105 transition-transform">
+                    <div class="text-5xl mb-4">🏠</div>
+                    <h3 class="text-xl font-bold mb-2 text-rain-light">Installation</h3>
+                    <p class="text-gray-300">Seamless aluminum eavestrough custom-fitted to your home. 5" and 6" options available.</p>
+                </div>
+                <div class="glass rounded-2xl p-6 hover:scale-105 transition-transform">
+                    <div class="text-5xl mb-4">🧹</div>
+                    <h3 class="text-xl font-bold mb-2 text-rain-light">Cleaning</h3>
+                    <p class="text-gray-300">Remove leaves, debris, and blockages. Prevent water damage and ice dams.</p>
+                </div>
+                <div class="glass rounded-2xl p-6 hover:scale-105 transition-transform">
+                    <div class="text-5xl mb-4">🔧</div>
+                    <h3 class="text-xl font-bold mb-2 text-rain-light">Repair</h3>
+                    <p class="text-gray-300">Fix leaks, sagging, and damage. Extend the life of your existing system.</p>
+                </div>
             </div>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-storm-blue/50 rounded-2xl p-8 border border-silver/10 ripple-hover">
-                    <div class="flex text-gold mb-4">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                    </div>
-                    <p class="text-silver-light mb-6 italic">"Excellent work! Professional, on-time, and great value. The new seamless gutters look amazing and work perfectly. Highly recommend AMO to anyone in the Ottawa Valley."</p>
-                    <div class="flex items-center gap-3">
-                        <div class="w-12 h-12 bg-rain-blue rounded-full flex items-center justify-center text-white font-bold">SM</div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="relative z-10 py-20">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="glass rounded-3xl p-8 md:p-12">
+                <h2 class="text-3xl font-bold mb-8 text-center">Why Ottawa Valley Trusts AMO</h2>
+                <div class="space-y-4">
+                    <div class="flex items-start gap-4">
+                        <span class="text-2xl">✅</span>
                         <div>
-                            <p class="font-semibold text-white">Sarah M.</p>
-                            <p class="text-sm text-silver">Pembroke, ON</p>
+                            <h4 class="font-bold text-rain-light">Family-Owned & Operated</h4>
+                            <p class="text-gray-300">Personal service, not a franchise. We treat your home like our own.</p>
                         </div>
                     </div>
-                </div>
-                
-                <div class="bg-storm-blue/50 rounded-2xl p-8 border border-silver/10 ripple-hover">
-                    <div class="flex text-gold mb-4">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                    </div>
-                    <p class="text-silver-light mb-6 italic">"Finally found a reliable eavestrough company! They fixed our leaking gutters the same week we called. Friendly service and fair pricing. Will definitely use again."</p>
-                    <div class="flex items-center gap-3">
-                        <div class="w-12 h-12 bg-rain-light rounded-full flex items-center justify-center text-storm-dark font-bold">MJ</div>
+                    <div class="flex items-start gap-4">
+                        <span class="text-2xl">✅</span>
                         <div>
-                            <p class="font-semibold text-white">Mike J.</p>
-                            <p class="text-sm text-silver">Petawawa, ON</p>
+                            <h4 class="font-bold text-rain-light">100% Customer Recommendation</h4>
+                            <p class="text-gray-300">Every customer would recommend us to friends and family.</p>
                         </div>
                     </div>
-                </div>
-                
-                <div class="bg-storm-blue/50 rounded-2xl p-8 border border-silver/10 ripple-hover">
-                    <div class="flex text-gold mb-4">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                    </div>
-                    <p class="text-silver-light mb-6 italic">"Great family business! They treated our home like it was their own. The crew was respectful, cleaned up everything, and the price was exactly what they quoted. 100% recommend!"</p>
-                    <div class="flex items-center gap-3">
-                        <div class="w-12 h-12 bg-trust-green rounded-full flex items-center justify-center text-white font-bold">LP</div>
+                    <div class="flex items-start gap-4">
+                        <span class="text-2xl">✅</span>
                         <div>
-                            <p class="font-semibold text-white">Linda P.</p>
-                            <p class="text-sm text-silver">Deep River, ON</p>
+                            <h4 class="font-bold text-rain-light">Free Quotes & Fair Pricing</h4>
+                            <p class="text-gray-300">No hidden fees. Transparent pricing on every job.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <span class="text-2xl">✅</span>
+                        <div>
+                            <h4 class="font-bold text-rain-light">Serving All Ottawa Valley</h4>
+                            <p class="text-gray-300">Pembroke, Petawawa, Arnprior, Renfrew, Deep River & surrounding areas.</p>
                         </div>
                     </div>
                 </div>
-            </div>
-            
-            <div class="text-center mt-12">
-                <a href="https://www.facebook.com/amoseamless" target="_blank" rel="noopener" class="inline-flex items-center gap-3 text-rain-light hover:text-white font-semibold transition-colors">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                    See All Reviews on Facebook (100% Recommended)
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-                </a>
             </div>
         </div>
     </section>
 
-    <!-- Before/After Gallery -->
-    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-storm-blue/30">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <span class="inline-block bg-rain-light/20 text-rain-light px-4 py-1.5 rounded-full text-sm font-semibold mb-4">Our Work</span>
-                <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Before & After Gallery</h2>
-                <p class="text-silver-light max-w-2xl mx-auto">See the difference professional eavestrough installation makes.</p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="group relative bg-storm-dark/50 rounded-2xl overflow-hidden aspect-video border border-silver/10">
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <div class="text-center p-6">
-                            <svg class="w-16 h-16 text-silver/40 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                            </svg>
-                            <p class="text-silver/60 font-medium">Project Photo Coming Soon</p>
-                        </div>
-                    </div>
-                    <div class="absolute inset-0 bg-rain-blue/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                        <span class="text-white font-semibold">Seamless Installation</span>
-                    </div>
-                </div>
-                
-                <div class="group relative bg-storm-dark/50 rounded-2xl overflow-hidden aspect-video border border-silver/10">
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <div class="text-center p-6">
-                            <svg class="w-16 h-16 text-silver/40 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                            </svg>
-                            <p class="text-silver/60 font-medium">Project Photo Coming Soon</p>
-                        </div>
-                    </div>
-                    <div class="absolute inset-0 bg-trust-green/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                        <span class="text-white font-semibold">Gutter Repair</span>
-                    </div>
-                </div>
-                
-                <div class="group relative bg-storm-dark/50 rounded-2xl overflow-hidden aspect-video border border-silver/10">
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <div class="text-center p-6">
-                            <svg class="w-16 h-16 text-silver/40 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                            </svg>
-                            <p class="text-silver/60 font-medium">Project Photo Coming Soon</p>
-                        </div>
-                    </div>
-                    <div class="absolute inset-0 bg-gold/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                        <span class="text-storm-dark font-semibold">Before/After Cleaning</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-10">
-                <p class="text-silver-light mb-4">Want to see our work in person?</p>
-                <a href="tel:613-312-9523" class="inline-flex items-center gap-2 bg-rain-blue hover:bg-rain-light text-white px-6 py-3 rounded-full font-semibold transition-colors">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
-                    </svg>
-                    Schedule a Free Consultation
-                </a>
-            </div>
+    <!-- CTA -->
+    <section class="relative z-10 py-20">
+        <div class="max-w-2xl mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-6">Ready for the Next Storm?</h2>
+            <p class="text-xl text-gray-300 mb-8">Get a free quote today. We'll assess your home and recommend the best solution.</p>
+            <a href="tel:613-312-9523" class="thunder-btn inline-block bg-gradient-to-r from-rain-blue to-blue-500 px-10 py-5 rounded-xl text-xl font-bold hover:scale-105 transition-transform shadow-lg shadow-rain-blue/30">
+                📞 Call 613-312-9523
+            </a>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-storm-dark via-storm-blue to-storm-dark text-white relative overflow-hidden">
-        <!-- Ripple effects -->
-        <div class="absolute inset-0 pointer-events-none">
-            <div class="ripple" style="left: 10%; top: 20%; width: 50px; height: 50px; animation-delay: 0s;"></div>
-            <div class="ripple" style="left: 80%; top: 30%; width: 40px; height: 40px; animation-delay: 1s;"></div>
-            <div class="ripple" style="left: 50%; top: 70%; width: 45px; height: 45px; animation-delay: 2s;"></div>
-        </div>
-        
-        <div class="max-w-4xl mx-auto text-center relative">
-            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">Ready to Protect Your Home?</h2>
-            <p class="text-xl text-silver-light mb-8 max-w-2xl mx-auto">Get a free, no-obligation quote today. We'll assess your needs and provide an honest recommendation.</p>
-            
-            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-10">
-                <a href="tel:613-312-9523" class="bg-gold hover:bg-yellow-400 text-storm-dark px-10 py-5 rounded-full font-bold text-xl transition-all duration-300 shadow-2xl btn-shimmer flex items-center justify-center gap-3 cta-pulse">
-                    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
-                    </svg>
-                    Call: 613-312-9523
-                </a>
-                <a href="mailto:amoseamless@gmail.com" class="bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white border-2 border-silver/30 px-10 py-5 rounded-full font-bold text-xl transition-all duration-300 flex items-center justify-center gap-3">
-                    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
-                        <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
-                    </svg>
-                    Email Us
-                </a>
-            </div>
-            
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-6 text-silver-light">
-                <div class="flex items-center gap-2">
-                    <svg class="w-5 h-5 text-trust-green" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                    Free Estimates
-                </div>
-                <div class="flex items-center gap-2">
-                    <svg class="w-5 h-5 text-trust-green" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                    No Obligation
-                </div>
-                <div class="flex items-center gap-2">
-                    <svg class="w-5 h-5 text-trust-green" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                    Fast Response
-                </div>
-            </div>
-        </div>
-        
-        <!-- Bottom mist -->
-        <div class="mist-overlay"></div>
-    </section>
-
-    <!-- Footer -->
-    <footer id="contact" class="bg-storm-dark pt-16 pb-8 border-t border-silver/10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-                <div>
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-rain-blue to-rain-light flex items-center justify-center">
-                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="text-lg font-bold text-white">AMO Seamless</h3>
-                            <p class="text-xs text-silver">Eavestrough Experts</p>
-                        </div>
-                    </div>
-                    <p class="text-silver text-sm mb-4">Family-owned eavestrough specialists serving Ottawa Valley with pride.</p>
-                    <div class="flex gap-3">
-                        <a href="https://www.facebook.com/amoseamless" target="_blank" rel="noopener" class="w-10 h-10 bg-silver/10 hover:bg-rain-blue rounded-lg flex items-center justify-center transition-colors">
-                            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                        </a>
-                    </div>
-                </div>
-                
-                <div>
-                    <h4 class="font-bold text-white mb-4">Services</h4>
-                    <ul class="space-y-2 text-silver text-sm">
-                        <li><a href="#services" class="hover:text-rain-light transition-colors">Eavestrough Installation</a></li>
-                        <li><a href="#services" class="hover:text-rain-light transition-colors">Gutter Cleaning</a></li>
-                        <li><a href="#services" class="hover:text-rain-light transition-colors">Eavestrough Repair</a></li>
-                        <li><a href="#services" class="hover:text-rain-light transition-colors">Gutter Protection</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="font-bold text-white mb-4">Service Areas</h4>
-                    <ul class="space-y-2 text-silver text-sm">
-                        <li>Pembroke, ON</li>
-                        <li>Petawawa, ON</li>
-                        <li>Deep River, ON</li>
-                        <li>Chalk River, ON</li>
-                        <li>Renfrew, ON</li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="font-bold text-white mb-4">Contact Us</h4>
-                    <ul class="space-y-3 text-sm">
-                        <li>
-                            <a href="tel:613-312-9523" class="flex items-center gap-3 text-silver hover:text-rain-light transition-colors">
-                                <svg class="w-5 h-5 text-rain-light" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
-                                </svg>
-                                613-312-9523
-                            </a>
-                        </li>
-                        <li>
-                            <a href="mailto:amoseamless@gmail.com" class="flex items-center gap-3 text-silver hover:text-rain-light transition-colors">
-                                <svg class="w-5 h-5 text-rain-light" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
-                                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
-                                </svg>
-                                amoseamless@gmail.com
-                            </a>
-                        </li>
-                        <li class="flex items-center gap-3 text-silver">
-                            <svg class="w-5 h-5 text-rain-light" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
-                            </svg>
-                            Pembroke, ON
-                        </li>
-                        <li class="flex items-center gap-3 text-silver">
-                            <svg class="w-5 h-5 text-rain-light" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
-                            </svg>
-                            Mon-Sat: 7AM-6PM
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="border-t border-silver/10 pt-8">
-                <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-                    <p class="text-silver/50 text-sm">© 2026 AMO Seamless Eavestrough. All rights reserved.</p>
-                    <div class="flex items-center gap-4 text-sm text-silver/50">
-                        <span>Serving Ottawa Valley with Pride</span>
-                        <span class="text-rain-light">💧</span>
-                    </div>
-                </div>
-            </div>
+    <!-- FOOTER -->
+    <footer class="relative z-10 glass py-8">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <p class="text-gray-400">© 2024 AMO Seamless Eavestrough | Pembroke & Ottawa Valley</p>
+            <p class="text-sm text-gray-500 mt-2">613-312-9523 | Free Quotes</p>
         </div>
     </footer>
 
     <script>
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-        
-        const header = document.querySelector('.sticky-header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
+        // GENERATE RAIN DROPS
+        const rainContainer = document.getElementById('rainContainer');
+        const dropCount = 200; // Heavy rain!
+
+        for (let i = 0; i < dropCount; i++) {
+            const drop = document.createElement('div');
+            drop.className = 'rain-drop' + (Math.random() > 0.7 ? ' heavy' : '');
+            drop.style.left = Math.random() * 100 + '%';
+            drop.style.width = (Math.random() * 2 + 1) + 'px';
+            drop.style.height = (Math.random() * 20 + 15) + 'px';
+            drop.style.animationDuration = (Math.random() * 0.5 + 0.4) + 's';
+            drop.style.animationDelay = Math.random() * 2 + 's';
+            drop.style.opacity = Math.random() * 0.5 + 0.3;
+            rainContainer.appendChild(drop);
+        }
+
+        // GENERATE RIPPLES
+        const rippleContainer = document.getElementById('rippleContainer');
+
+        setInterval(() => {
+            const ripple = document.createElement('div');
+            ripple.className = 'ripple';
+            ripple.style.left = Math.random() * 100 + '%';
+            ripple.style.bottom = Math.random() * 50 + 'px';
+            ripple.style.width = (Math.random() * 10 + 5) + 'px';
+            ripple.style.height = ripple.style.width;
+            rippleContainer.appendChild(ripple);
+
+            setTimeout(() => ripple.remove(), 1500);
+        }, 100);
+
+        // RANDOM LIGHTNING FLASHES
+        const lightning = document.querySelector('.lightning');
+        setInterval(() => {
+            if (Math.random() > 0.7) {
+                lightning.style.animation = 'none';
+                lightning.offsetHeight;
+                lightning.style.animation = 'lightning-flash 0.5s ease-out';
             }
-        });
-        
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    mobileMenu.classList.add('hidden');
-                }
-            });
-        });
+        }, 5000);
     </script>
 </body>
 </html>
