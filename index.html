@@ -1,9 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Under Construction Banner -->
+<style>
+.construction-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(90deg, #f59e0b, #d97706, #f59e0b);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+    font-weight: 600;
+    font-size: 14px;
+    z-index: 99999;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.construction-banner::before {
+    content: "🚧";
+    font-size: 18px;
+}
+.construction-banner::after {
+    content: "🚧";
+    font-size: 18px;
+}
+@keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+body {
+    padding-top: 50px !important;
+}
+</style>
+<div class="construction-banner">
+    Under Construction — Coming Soon!
+</div>
+<!-- End Banner -->
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AMO Seamless Eavestrough - Professional eavestrough installation, cleaning, and repair services in Pembroke, Petawawa, and Ottawa Valley. Family-owned with 100% customer recommendation. Free quotes: 613-312-9523">
+    <meta name="description" content="AMO Seamless Eavestrough - Professional eavestrough installation, cleaning, and repair services in Pembroke, Petawawa, and Ottawa Valley. Family-owned with 100% customer recommendation. Free quotes: [CONTACT INFO REMOVED]">
     <meta name="keywords" content="eavestrough, seamless gutters, gutter cleaning, gutter repair, Pembroke, Petawawa, Ottawa Valley, eavestrough installation">
     <meta name="robots" content="index, follow">
     <meta name="author" content="AMO Seamless Eavestrough">
@@ -19,7 +62,7 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="AMO Seamless Eavestrough | Ottawa Valley Gutter Experts">
-    <meta name="twitter:description" content="Professional eavestrough installation, cleaning, and repair. 613-312-9523">
+    <meta name="twitter:description" content="Professional eavestrough installation, cleaning, and repair. [CONTACT INFO REMOVED]">
     
     <title>AMO Seamless Eavestrough | Pembroke & Ottawa Valley | Installation, Cleaning & Repair</title>
     
@@ -148,8 +191,8 @@
         "alternateName": "AMO Seamless Eavestroughs",
         "description": "Family-owned eavestrough installation, cleaning, and repair services serving Pembroke, Petawawa, and the Ottawa Valley. 100% customer recommendation.",
         "url": "https://amogutters.ottawav.com",
-        "telephone": "+1-613-312-9523",
-        "email": "amoseamless@gmail.com",
+        "telephone": "+1-[CONTACT INFO REMOVED]",
+        "email": "[EMAIL REMOVED]",
         "address": {
             "@type": "PostalAddress",
             "addressLocality": "Pembroke",
@@ -220,11 +263,11 @@
                 </svg>
                 <span class="font-semibold text-sm sm:text-base">🌱 Spring Cleaning Season is Here!</span>
             </div>
-            <a href="tel:613-312-9523" class="bg-white text-trust-green px-4 py-1.5 rounded-full font-bold text-sm hover:bg-yellow-300 transition-all duration-300 flex items-center gap-2">
+            <a href="tel:[CONTACT INFO REMOVED]" class="bg-white text-trust-green px-4 py-1.5 rounded-full font-bold text-sm hover:bg-yellow-300 transition-all duration-300 flex items-center gap-2">
                 <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
                 </svg>
-                Book Your Cleaning: 613-312-9523
+                Book Your Cleaning: [CONTACT INFO REMOVED]
             </a>
         </div>
     </div>
@@ -257,13 +300,13 @@
                 
                 <!-- CTA -->
                 <div class="flex items-center gap-3">
-                    <a href="tel:613-312-9523" class="hidden sm:flex items-center gap-2 text-sky-300 hover:text-white transition-colors">
+                    <a href="tel:[CONTACT INFO REMOVED]" class="hidden sm:flex items-center gap-2 text-sky-300 hover:text-white transition-colors">
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
                         </svg>
-                        <span class="font-semibold">613-312-9523</span>
+                        <span class="font-semibold">[CONTACT INFO REMOVED]</span>
                     </a>
-                    <a href="tel:613-312-9523" class="bg-gold hover:bg-yellow-400 text-deep-blue px-4 sm:px-6 py-2 sm:py-2.5 rounded-full font-bold text-sm transition-all duration-300 shadow-lg hover:shadow-xl cta-pulse">
+                    <a href="tel:[CONTACT INFO REMOVED]" class="bg-gold hover:bg-yellow-400 text-deep-blue px-4 sm:px-6 py-2 sm:py-2.5 rounded-full font-bold text-sm transition-all duration-300 shadow-lg hover:shadow-xl cta-pulse">
                         Free Quote
                     </a>
                     <!-- Mobile menu button -->
@@ -284,11 +327,11 @@
                 <a href="#areas" class="block py-2 text-sm font-medium hover:text-sky-300 transition-colors">Service Areas</a>
                 <a href="#about" class="block py-2 text-sm font-medium hover:text-sky-300 transition-colors">About Us</a>
                 <a href="#contact" class="block py-2 text-sm font-medium hover:text-sky-300 transition-colors">Contact</a>
-                <a href="tel:613-312-9523" class="flex items-center gap-2 py-2 text-sky-300">
+                <a href="tel:[CONTACT INFO REMOVED]" class="flex items-center gap-2 py-2 text-sky-300">
                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
                     </svg>
-                    613-312-9523
+                    [CONTACT INFO REMOVED]
                 </a>
             </nav>
         </div>
@@ -345,7 +388,7 @@
                     
                     <!-- CTA Buttons -->
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="tel:613-312-9523" class="bg-gold hover:bg-yellow-400 text-deep-blue px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-2xl hover:shadow-yellow-400/25 flex items-center justify-center gap-3 cta-pulse">
+                        <a href="tel:[CONTACT INFO REMOVED]" class="bg-gold hover:bg-yellow-400 text-deep-blue px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-2xl hover:shadow-yellow-400/25 flex items-center justify-center gap-3 cta-pulse">
                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
                                 <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
                             </svg>
@@ -642,11 +685,11 @@
             
             <div class="text-center">
                 <p class="text-blue-200 mb-4">And all surrounding areas in Renfrew County</p>
-                <a href="tel:613-312-9523" class="inline-flex items-center gap-2 bg-gold hover:bg-yellow-400 text-deep-blue px-8 py-4 rounded-full font-bold text-lg transition-all duration-300">
+                <a href="tel:[CONTACT INFO REMOVED]" class="inline-flex items-center gap-2 bg-gold hover:bg-yellow-400 text-deep-blue px-8 py-4 rounded-full font-bold text-lg transition-all duration-300">
                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
                     </svg>
-                    Check If We Serve Your Area: 613-312-9523
+                    Check If We Serve Your Area: [CONTACT INFO REMOVED]
                 </a>
             </div>
         </div>
@@ -854,7 +897,7 @@
             
             <div class="text-center mt-10">
                 <p class="text-gray-500 mb-4">Want to see our work in person?</p>
-                <a href="tel:613-312-9523" class="inline-flex items-center gap-2 bg-deep-blue hover:bg-ocean-blue text-white px-6 py-3 rounded-full font-semibold transition-colors">
+                <a href="tel:[CONTACT INFO REMOVED]" class="inline-flex items-center gap-2 bg-deep-blue hover:bg-ocean-blue text-white px-6 py-3 rounded-full font-semibold transition-colors">
                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
                     </svg>
@@ -876,13 +919,13 @@
             <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">Get a free, no-obligation quote today. We'll assess your needs and provide an honest recommendation – no pressure, just professional advice.</p>
             
             <div class="flex flex-col sm:flex-row gap-4 justify-center mb-10">
-                <a href="tel:613-312-9523" class="bg-gold hover:bg-yellow-400 text-deep-blue px-10 py-5 rounded-full font-bold text-xl transition-all duration-300 shadow-2xl hover:shadow-yellow-400/30 flex items-center justify-center gap-3 cta-pulse">
+                <a href="tel:[CONTACT INFO REMOVED]" class="bg-gold hover:bg-yellow-400 text-deep-blue px-10 py-5 rounded-full font-bold text-xl transition-all duration-300 shadow-2xl hover:shadow-yellow-400/30 flex items-center justify-center gap-3 cta-pulse">
                     <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
                     </svg>
-                    Call: 613-312-9523
+                    Call: [CONTACT INFO REMOVED]
                 </a>
-                <a href="mailto:amoseamless@gmail.com" class="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white border-2 border-white/30 px-10 py-5 rounded-full font-bold text-xl transition-all duration-300 flex items-center justify-center gap-3">
+                <a href="mailto:[EMAIL REMOVED]" class="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white border-2 border-white/30 px-10 py-5 rounded-full font-bold text-xl transition-all duration-300 flex items-center justify-center gap-3">
                     <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
                         <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
@@ -963,20 +1006,20 @@
                     <h4 class="font-bold mb-4">Contact Us</h4>
                     <ul class="space-y-3 text-sm">
                         <li>
-                            <a href="tel:613-312-9523" class="flex items-center gap-3 text-gray-400 hover:text-white transition-colors">
+                            <a href="tel:[CONTACT INFO REMOVED]" class="flex items-center gap-3 text-gray-400 hover:text-white transition-colors">
                                 <svg class="w-5 h-5 text-sky-400" fill="currentColor" viewBox="0 0 20 20">
                                     <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
                                 </svg>
-                                613-312-9523
+                                [CONTACT INFO REMOVED]
                             </a>
                         </li>
                         <li>
-                            <a href="mailto:amoseamless@gmail.com" class="flex items-center gap-3 text-gray-400 hover:text-white transition-colors">
+                            <a href="mailto:[EMAIL REMOVED]" class="flex items-center gap-3 text-gray-400 hover:text-white transition-colors">
                                 <svg class="w-5 h-5 text-sky-400" fill="currentColor" viewBox="0 0 20 20">
                                     <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
                                     <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
                                 </svg>
-                                amoseamless@gmail.com
+                                [EMAIL REMOVED]
                             </a>
                         </li>
                         <li class="flex items-center gap-3 text-gray-400">
